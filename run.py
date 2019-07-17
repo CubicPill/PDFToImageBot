@@ -15,6 +15,7 @@ def convert(bot, update):
 def receive_file(bot, update):
     file = bot.get_file(update.message.document.file_id)
     file.download(os.path.join(TEMP_DIR, '{}.pdf'.format(update.message.from_user.id)))
+    return SELECT_SIZE
 
 
 def cancel(update, context):
